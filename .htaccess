@@ -1,0 +1,37 @@
+# GB Laser Soldering — Apache Configuration
+# Hostinger uses Apache, so this file activates the custom 404 page
+
+# Custom Error Pages
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+
+# Redirect trailing slashes (clean URLs)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
+
+# Cache static assets (images, CSS, JS, fonts)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg  "access plus 1 month"
+    ExpiresByType image/png   "access plus 1 month"
+    ExpiresByType text/css    "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/json "access plus 1 day"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Disable access to hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

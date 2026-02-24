@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found | GB Laser Soldering</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { gold: { DEFAULT: '#D4AF37', light: '#F5D77A', dark: '#B8860B' }, surface: '#141419', bg: '#0B0B0F' }, fontFamily: { heading: ['"Playfair Display"', 'serif'], body: ['Montserrat', 'sans-serif'] } } } }</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 404 glitch number */
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(6rem, 20vw, 14rem);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #D4AF37 0%, #F5D77A 40%, #B8860B 70%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+            animation: shimmer 4s ease-in-out infinite;
+            background-size: 200% auto;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
+        }
+
+        /* Floating gem animation */
+        .floating-gem {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(8deg);
+            }
+        }
+
+        /* Gold ring pulse */
+        .ring-pulse {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            animation: ringExpand 3s ease-out infinite;
+        }
+
+        @keyframes ringExpand {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bg text-[#F5F5F5] min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-[999]">
+        <div
+            class="flex items-center justify-between px-6 md:px-12 py-4 bg-black/80 backdrop-blur-xl border-b border-gold/20">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="images/gb_logo.jpeg" alt="GB Logo"
+                    class="h-10 w-auto rounded-lg object-contain group-hover:scale-105 transition-transform duration-300">
+                <span class="font-heading font-bold text-lg tracking-widest gold-text">GB LASER SOLDERING</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 HERO -->
+    <main class="flex-grow flex items-center justify-center px-6 pt-24 pb-16">
+        <div class="max-w-2xl w-full text-center">
+
+            <!-- Animated gem with pulse rings -->
+            <div class="relative inline-flex items-center justify-center mb-8">
+                <div class="ring-pulse w-32 h-32"></div>
+                <div class="ring-pulse w-32 h-32" style="animation-delay: 1s;"></div>
+                <i
+                    class="bi bi-gem floating-gem text-7xl text-gold relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.6)]"></i>
+            </div>
+
+            <!-- Error Code -->
+            <div class="mb-4">
+                <span class="error-code">404</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-heading font-bold text-2xl md:text-3xl text-[#F5F5F5] mb-4">
+                This Page Has Gone <span class="gold-text">Missing</span>
+            </h1>
+            <p class="text-[#9CA3AF] text-sm md:text-base leading-relaxed mb-10 max-w-md mx-auto">
+                Like a lost jewel, the page you're looking for doesn't exist here. It may have been moved, renamed, or
+                never existed.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+                <a href="index.html" class="btn-primary">
+                    <i class="bi bi-house"></i> Back to Home
+                </a>
+                <a href="services.html" class="btn-outline">
+                    <i class="bi bi-grid-3x3-gap"></i> Our Services
+                </a>
+                <a href="contact.html" class="btn-outline">
+                    <i class="bi bi-envelope"></i> Contact Us
+                </a>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="glass-card p-7 text-left max-w-md mx-auto">
+                <p class="text-[#F5D77A] font-semibold text-sm mb-4 tracking-widest uppercase flex items-center gap-2">
+                    <i class="bi bi-map text-gold"></i> Quick Navigation
+                </p>
+                <ul class="grid grid-cols-2 gap-2 text-sm text-[#9CA3AF]">
+                    <li><a href="index.html" class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Home</a></li>
+                    <li><a href="about.html" class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> About Us</a></li>
+                    <li><a href="services.html"
+                            class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Services</a></li>
+                    <li><a href="gallery.html" class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Gallery</a></li>
+                    <li><a href="contact.html" class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Contact</a></li>
+                    <li><a href="privacy-policy.html"
+                            class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Privacy Policy</a></li>
+                    <li><a href="terms.html" class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Terms</a></li>
+                    <li><a href="disclaimer.html"
+                            class="flex items-center gap-2 hover:text-gold transition-colors py-1"><i
+                                class="bi bi-arrow-right-short text-gold"></i> Disclaimer</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FABs -->
+    <div class="floating-buttons">
+        <a href="tel:+917499392325" class="fab-button fab-phone" aria-label="Call Us">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+            </svg>
+        </a>
+        <a href="https://wa.me/917499392325" class="fab-button fab-whatsapp" aria-label="WhatsApp" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-surface border-t border-gold/10 py-10 px-6">
+        <div class="max-w-7xl mx-auto text-center text-[#9CA3AF] text-xs space-y-2">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-1 mb-3">
+                <a href="privacy-policy.html" class="hover:text-gold transition-colors">Privacy Policy</a>
+                <a href="disclaimer.html" class="hover:text-gold transition-colors">Disclaimer</a>
+                <a href="terms.html" class="hover:text-gold transition-colors">Terms &amp; Conditions</a>
+            </div>
+            <p>© 2024 GB LASER SOLDERING. All rights reserved.</p>
+            <p>Powered by <a href="https://davishkar.github.io/My-Services-Page/" target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gold font-semibold hover:text-gold-light transition-colors">Avishkar Digital Studio</a>
+                | v 2.0.0</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
