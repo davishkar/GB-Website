@@ -7,6 +7,14 @@
     <title>GB LASER SOLDERING - Home</title>
     <meta name="description"
         content="GB LASER SOLDERING — Professional Laser Soldering for Gold & Silver Jewelry, NG Gold Testing, Precision Repairs & Expert Craftsmanship in Vijayawada.">
+    <link rel="icon" type="image/jpeg" href="images/gb_logo.jpeg">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GB LASER SOLDERING - Home">
+    <meta property="og:description"
+        content="Professional Laser Soldering for Gold & Silver Jewelry, NG Gold Testing, Precision Repairs in Vijayawada.">
+    <meta property="og:image" content="images/gb_logo.jpeg">
+    <meta property="og:url" content="https://www.gblasersolder.com/">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -76,7 +84,7 @@
             </button>
 
             <!-- Nav Links -->
-            <nav class="nav-links hidden md:flex items-center gap-8" id="navLinks">
+           <nav class="nav-links md:flex items-center gap-8" id="navLinks">
                 <a href="index.html" class="nav-link active" data-i18n="home">Home</a>
                 <a href="about.html" class="nav-link" data-i18n="about">About</a>
                 <a href="services.html" class="nav-link" data-i18n="services">Services</a>
@@ -270,144 +278,6 @@
         </div>
     </section>
 
-    <!-- ===================== TESTIMONIALS (Dynamic) ===================== -->
-    <section class="section-surface py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-14 fade-up">
-                <span class="section-label"><i class="bi bi-chat-quote me-1"></i> Customer Reviews</span>
-                <h2 class="font-heading font-bold text-4xl md:text-5xl gold-text mt-2">What Our Customers Say</h2>
-                <p class="text-[#9CA3AF] mt-4 text-sm max-w-lg mx-auto">Trusted by jewellers and individuals across
-                    Vijayawada</p>
-                <span class="section-title-line"></span>
-            </div>
-
-            <!-- Review cards container: skeleton shown by default, replaced by JS -->
-            <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Skeleton loaders -->
-                <div class="glass-card p-6 animate-pulse space-y-3">
-                    <div class="h-3 bg-gold/10 rounded w-16"></div>
-                    <div class="h-3 bg-white/5 rounded w-full"></div>
-                    <div class="h-3 bg-white/5 rounded w-5/6"></div>
-                    <div class="h-3 bg-white/5 rounded w-4/6"></div>
-                    <div class="h-8 bg-white/5 rounded-full w-32 mt-5"></div>
-                </div>
-                <div class="glass-card p-6 animate-pulse space-y-3">
-                    <div class="h-3 bg-gold/10 rounded w-16"></div>
-                    <div class="h-3 bg-white/5 rounded w-full"></div>
-                    <div class="h-3 bg-white/5 rounded w-5/6"></div>
-                    <div class="h-3 bg-white/5 rounded w-4/6"></div>
-                    <div class="h-8 bg-white/5 rounded-full w-32 mt-5"></div>
-                </div>
-                <div class="glass-card p-6 animate-pulse space-y-3 hidden md:block">
-                    <div class="h-3 bg-gold/10 rounded w-16"></div>
-                    <div class="h-3 bg-white/5 rounded w-full"></div>
-                    <div class="h-3 bg-white/5 rounded w-5/6"></div>
-                    <div class="h-3 bg-white/5 rounded w-4/6"></div>
-                    <div class="h-8 bg-white/5 rounded-full w-32 mt-5"></div>
-                </div>
-                <div class="glass-card p-6 animate-pulse space-y-3 hidden lg:block">
-                    <div class="h-3 bg-gold/10 rounded w-16"></div>
-                    <div class="h-3 bg-white/5 rounded w-full"></div>
-                    <div class="h-3 bg-white/5 rounded w-5/6"></div>
-                    <div class="h-3 bg-white/5 rounded w-4/6"></div>
-                    <div class="h-8 bg-white/5 rounded-full w-32 mt-5"></div>
-                </div>
-            </div>
-
-            <!-- CTAs -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 fade-up">
-                <a href="reviews.php" class="btn-primary">
-                    <i class="bi bi-star"></i> See All Reviews
-                </a>
-                <a href="reviews.php#write-review" class="btn-outline">
-                    <i class="bi bi-pencil-square"></i> Write a Review
-                </a>
-                <a href="https://maps.google.com/" target="_blank"
-                    rel="noopener noreferrer" class="btn-outline">
-                    <i class="bi bi-google"></i> Review on Google
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-            // Dynamically load the latest 4 reviews from the PHP API
-            (function () {
-                const grid = document.getElementById('reviews-grid');
-                if (!grid) return;
-
-                function starsHTML(rating) {
-                    let s = '';
-                    for (let i = 1; i <= 5; i++) {
-                        s += `<i class="bi bi-star${i <= rating ? '-fill' : ''} text-gold text-sm"></i>`;
-                    }
-                    return s;
-                }
-
-                function renderCard(r, delay) {
-                    return `
-            <div class="glass-card p-6 flex flex-col fade-up relative" style="transition-delay:${delay}s">
-                <span class="absolute top-4 right-5 text-gold/20 font-heading font-black text-6xl leading-none select-none">"</span>
-                <div class="flex gap-1 mb-4 relative z-10">${starsHTML(r.rating)}</div>
-                <p class="text-[#9CA3AF] text-sm leading-relaxed flex-grow mb-5 relative z-10">"${r.review_text}"</p>
-                <div class="flex items-center gap-3 pt-4 border-t border-gold/10 relative z-10">
-                    <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
-                        <i class="bi bi-person-fill text-gold text-sm"></i>
-                    </div>
-                    <div>
-                        <p class="font-semibold text-[#F5D77A] text-sm">${r.name}</p>
-                        <p class="text-[#9CA3AF] text-xs">${r.service}</p>
-                    </div>
-                </div>
-            </div>`;
-                }
-
-                function staticFallback() {
-                    // Show static cards if API unavailable (viewing as local HTML file)
-                    grid.innerHTML = `
-            <div class="glass-card p-6 flex flex-col fade-up relative">
-                <span class="absolute top-4 right-5 text-gold/20 font-heading font-black text-6xl leading-none select-none">"</span>
-                <div class="flex gap-1 mb-4 relative z-10"><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i></div>
-                <p class="text-[#9CA3AF] text-sm leading-relaxed flex-grow mb-5 relative z-10">"Got my gold chain repaired here. The laser soldering was perfect — you can't even tell where the break was. Very professional service and done within an hour!"</p>
-                <div class="flex items-center gap-3 pt-4 border-t border-gold/10 relative z-10"><div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0"><i class="bi bi-person-fill text-gold text-sm"></i></div><div><p class="font-semibold text-[#F5D77A] text-sm">Ramesh K.</p><p class="text-[#9CA3AF] text-xs">Gold Chain Repair</p></div></div>
-            </div>
-            <div class="glass-card p-6 flex flex-col fade-up relative" style="transition-delay:.1s">
-                <span class="absolute top-4 right-5 text-gold/20 font-heading font-black text-6xl leading-none select-none">"</span>
-                <div class="flex gap-1 mb-4 relative z-10"><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i></div>
-                <p class="text-[#9CA3AF] text-sm leading-relaxed flex-grow mb-5 relative z-10">"I had my mangalsutra repaired. They were very careful with the stones. Excellent laser work — highly recommended!"</p>
-                <div class="flex items-center gap-3 pt-4 border-t border-gold/10 relative z-10"><div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0"><i class="bi bi-person-fill text-gold text-sm"></i></div><div><p class="font-semibold text-[#F5D77A] text-sm">Priya S.</p><p class="text-[#9CA3AF] text-xs">Mangalsutra Repair</p></div></div>
-            </div>
-            <div class="glass-card p-6 flex flex-col fade-up relative" style="transition-delay:.2s">
-                <span class="absolute top-4 right-5 text-gold/20 font-heading font-black text-6xl leading-none select-none">"</span>
-                <div class="flex gap-1 mb-4 relative z-10"><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-half text-gold text-sm"></i></div>
-                <p class="text-[#9CA3AF] text-sm leading-relaxed flex-grow mb-5 relative z-10">"Used the NG gold testing service before buying gold jewellery. The machine reading was accurate. Saved me from a bad deal!"</p>
-                <div class="flex items-center gap-3 pt-4 border-t border-gold/10 relative z-10"><div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0"><i class="bi bi-person-fill text-gold text-sm"></i></div><div><p class="font-semibold text-[#F5D77A] text-sm">Suresh M.</p><p class="text-[#9CA3AF] text-xs">NG Gold Testing</p></div></div>
-            </div>
-            <div class="glass-card p-6 flex flex-col fade-up relative" style="transition-delay:.3s">
-                <span class="absolute top-4 right-5 text-gold/20 font-heading font-black text-6xl leading-none select-none">"</span>
-                <div class="flex gap-1 mb-4 relative z-10"><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i><i class="bi bi-star-fill text-gold text-sm"></i></div>
-                <p class="text-[#9CA3AF] text-sm leading-relaxed flex-grow mb-5 relative z-10">"Diamond ring stone setting came loose. Gautam bhai fixed it with laser without removing the stone — no damage at all! Best in Vijayawada."</p>
-                <div class="flex items-center gap-3 pt-4 border-t border-gold/10 relative z-10"><div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0"><i class="bi bi-person-fill text-gold text-sm"></i></div><div><p class="font-semibold text-[#F5D77A] text-sm">Anita R.</p><p class="text-[#9CA3AF] text-xs">Diamond Stone Setting</p></div></div>
-            </div>`;
-                    document.querySelectorAll('#reviews-grid .fade-up').forEach(el => {
-                        setTimeout(() => el.classList.add('visible'), 200);
-                    });
-                }
-
-                fetch('get_reviews.php?limit=4')
-                    .then(res => { if (!res.ok) throw new Error(); return res.json(); })
-                    .then(data => {
-                        if (!data.success || !data.reviews.length) { staticFallback(); return; }
-                        grid.innerHTML = data.reviews.map((r, i) => renderCard(r, i * 0.1)).join('');
-                        // Trigger fade-up for new cards
-                        setTimeout(() => {
-                            document.querySelectorAll('#reviews-grid .fade-up').forEach(el => el.classList.add('visible'));
-                        }, 100);
-                    })
-                    .catch(() => staticFallback());
-            })();
-    </script>
-
 
     <!-- ===================== CTA BANNER ===================== -->
     <section class="py-24 px-6">
@@ -529,12 +399,9 @@
                     <a href="reviews.php" class="hover:text-gold transition-colors">Reviews</a>
                     <a href="sitemap.html" class="hover:text-gold transition-colors">Sitemap</a>
                 </div>
-                <p>© 2024 GB LASER SOLDERING. <span data-i18n="footer_rights">All rights reserved. Crafted with
-                        precision &amp; passion.</span></p>
-                <p class="mt-1">Powered by <a href="https://davishkar.github.io/AvishkarStudio/" target="_blank"
-                        rel="noopener noreferrer"
-                        class="text-gold hover:text-gold-light font-semibold transition-colors">Avishkar
-                        Studio</a> | v 2.0.0</p>
+                <p>© 2025 GB LASER SOLDERING | Gautam Bhosale. All rights reserved.</p>
+                <p>Powered by <a href="https://davishkar.github.io/AvishkarStudio/" target="_blank"
+                        rel="noopener noreferrer" class="text-gold font-semibold">Avishkar Studio</a></p>
             </div>
         </div>
     </footer>

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Language Handling ---
     const langSelector = document.getElementById('lang-selector');
-    const defaultLang = 'mr';
+    const defaultLang = 'en';
     let currentLang = localStorage.getItem('preferredLang') || defaultLang;
 
     if (langSelector) {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close menu on outside click
     document.addEventListener('click', (e) => {
         if (navLinks && navLinks.classList.contains('active')) {
-            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+            if (!navLinks.contains(e.target) && (!hamburger || !hamburger.contains(e.target))) {
                 closeMenu();
             }
         }
